@@ -1,8 +1,6 @@
-## Name
+## Name: k hemanth yadav
 
-## Register No
-
-## Exp no:
+## Register No: 212224100033
 
 # Automatic Street Light Controller Using LDR
 
@@ -103,13 +101,42 @@ In audio compressors, this property is applicable.
 * Garden lighting
 * Energy-saving lighting systems
 
-## Program
+## Program:
+```
+int ldrPin = A0;
+int ledPin = 9;
+int ldrValue;
+int threshold = 500;
 
-## Circuit Diagram
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
 
-## Output
+void loop()
+{
+  ldrValue = analogRead(ldrPin);
 
-## Result
+  if (ldrValue < threshold)
+  {
+    digitalWrite(ledPin, HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin, LOW);
+  }
 
-The automatic street light controller using an LDR sensor was successfully designed and implemented in hardware. 
-The street light automatically turns **ON during darkness** and **OFF when sufficient light is available**.
+  delay(500);
+}
+```
+
+## Circuit Diagram:
+<img width="1018" height="728" alt="image" src="https://github.com/user-attachments/assets/5115b252-8774-44e2-a48e-3dae7f189324" />
+
+## Output:
+<img width="1286" height="908" alt="image" src="https://github.com/user-attachments/assets/0e03cf3d-88f2-4e1d-bb64-969609d064ce" />
+
+
+## Result: The Automatic Street Light Controller using LDR sensor was successfully designed and simulated in Proteus. The LED automatically turns ON when the surrounding light intensity decreases (darkness) and turns OFF when sufficient light is available.
+
